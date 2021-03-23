@@ -6,7 +6,7 @@ public class Main{
     public static void main(String[] args){
         // System.out.println(pluralize("dog",3));
         // System.out.println(pluralize("dog",1));
-        // clock();        
+        clock();        
         flipNHeads(6);
     }
 
@@ -22,9 +22,13 @@ public class Main{
         {
             LocalDateTime time = LocalDateTime.now();
             int hour = time.getHour();
+            String hourS = hour < 10 ? "0"+hour : ""+hour;
             int minute = time.getMinute();
+            String minuteS = minute < 10 ? "0"+minute : ""+minute;
             int seconds = time.getSecond();
-            System.out.println(hour + ":" + minute + ":" + seconds);
+            String secondsS = seconds < 10 ? "0"+seconds : ""+seconds;
+
+            System.out.println(hourS + ":" + minuteS + ":" + secondsS);
             try
             {
                 TimeUnit.SECONDS.sleep(1);
