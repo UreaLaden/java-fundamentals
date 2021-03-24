@@ -19,9 +19,9 @@ public class RollDiceTest {
 
     @Test public void testFindAverage(){
         int[] arr = {57, 65, 65, 70, 72, 65, 51};
-        double expectedOutPut = 63.0f;
-        double actualOutput = RollDice.findAverage(arr);
-        assertEquals(expectedOutPut,actualOutput,0);
+        String expectedOutPut = "63.57";
+        String actualOutput = String.format("%.2f",RollDice.findAverage(arr));
+        assertEquals("it should choose the smallest average",expectedOutPut,actualOutput);
     }
 
     @Test public void testFindSmallestAverage(){
