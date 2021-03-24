@@ -7,5 +7,5 @@ This method returns true or false depending on whether the array contains duplic
 ## Find Average
 This method accepts an array of integers and calculates and returns the average of all the values in the array.
 ## Find Smallest Average
-This method takes in an array of arrays, then calculates the average value for each array and return the array with the lowest average.
+This method takes in an array of arrays, then calculates the average value for each array and return the array with the lowest average .
 
