@@ -105,6 +105,34 @@ public class AppTest {
         targets.add(line3);
         String filePath = "src/test/resources/gates.js";
         boolean containsTargets = App.readJSFile(filePath).containsAll(targets);
-        assertTrue("Must contain all errors: ",containsTargets);
+        assertTrue("Should handle many errors: ",containsTargets);
+
+        ArrayList<String> targets1 = new ArrayList<>();
+        String filePatha = "src/test/resources/test1.js";
+        boolean containsTargetsa = App.readJSFile(filePatha).containsAll(targets1);
+        assertTrue("Should handle zero errors: ",containsTargetsa);
+
+        ArrayList<String> targets2 = new ArrayList<>();
+        String line2b = "Line 13: Missing semicolon";
+        targets2.add(line2b);
+        String filePathb = "src/test/resources/test2.js";
+        boolean containsTargetsb = App.readJSFile(filePathb).containsAll(targets2);
+        assertTrue("Should handle an error: ",containsTargetsb);
+
+        ArrayList<String> targets3 = new ArrayList<>();
+        String line3c = "Line 3: Missing semicolon";
+        String line4c = "Line 11: Missing semicolon";
+        String line5c = "Line 15: Missing semicolon";
+        targets2.add(line3c);
+        targets2.add(line4c);
+        targets2.add(line5c);
+        String filePathc = "src/test/resources/test3.js";
+        boolean containsTargetsc = App.readJSFile(filePathc).containsAll(targets3);
+        assertTrue("Should handle a few errors: ",containsTargetsc);
+
+        ArrayList<String> targets4 = new ArrayList<>();
+        String filePathd = "src/test/resources/test4.js";
+        boolean containsTargetsd = App.readJSFile(filePathd).containsAll(targets3);
+        assertTrue("Should handle an empty file: ",containsTargetsc);
     }
 }

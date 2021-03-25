@@ -94,6 +94,10 @@ public class App {
             return faultyLines;
         }
         int currentLine = 1;
+        if(!fileScanner.hasNextLine()){
+            System.out.println("Empty File");
+            return faultyLines;
+        }
         while(fileScanner.hasNextLine()){
             String line = fileScanner.nextLine();
             if(
@@ -110,7 +114,7 @@ public class App {
             }
             currentLine++;
         }
-        System.out.println(faultyLines.size());
+        System.out.println(faultyLines.size() == 0 ? "No errors\n": "\n");
         return faultyLines;
     }
 }
