@@ -11,7 +11,9 @@ public class User {
         this.name = name;
     }
     public boolean addReview(Review review){
-        if(!userReviews.contains(review.restaurant)){
+        System.out.println(userReviews);
+        System.out.println(review.name);
+        if(!userReviews.contains(review.establishment)){
             userReviews.add(review);
             return true;
         }
@@ -21,7 +23,7 @@ public class User {
         if(!userReviews.contains(restaurant.name)){
             System.out.println(restaurant.name);
             Review r = restaurant.addReview(body, restaurant.price, name,stars);
-            r.restaurant = restaurant.name;
+            r.name = restaurant.name;
             addReview(r);
         }else{
             System.out.println("User already reviewed this restaurant");
